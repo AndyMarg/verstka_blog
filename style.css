@@ -23,6 +23,7 @@ body {
 header {
 	background: #292929;
 	overflow: hidden;
+	padding-top: 35px;
 }
 
 .center-block-main {
@@ -32,7 +33,6 @@ header {
 
 .logo {
 	float: left;
-	margin-top: 45px;
 }
 
 .header-menu {
@@ -49,7 +49,7 @@ header {
 	color: #fff;
 	font-weight: 600;;
 	text-decoration: none;
-	padding: 50px 35px;
+	padding: 5px 35px 35px;
 	border-bottom: 6px solid #292929;
 }
 
@@ -59,7 +59,9 @@ header {
 }
 
 .content {
-	margin-top: 80px;
+	padding-top: 80px;
+	border-left: 1px solid #e1e0e0;
+	border-right: 1px solid #e1e0e0;
 }
 
 main {
@@ -77,10 +79,33 @@ article {
 }
 
 article>header {
+	position: relative;
 	font-size: 0;
 	background: none;
+	padding-top: 0px;
 	margin-bottom: 20px;
 }
+
+.published { 
+	position: absolute;
+	bottom: -100px;
+	padding: 10px 20px;
+	width: 100%;
+	font-size: 16px;
+	font-weight: bold;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	box-sizing: border-box;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+
+	transition: all 0.2s linear;
+}
+
+article>header:hover .published { 
+	bottom: -25px;
+}	
 
 article>.info {
 	margin-left: 20px;
@@ -108,6 +133,10 @@ article a.more {
 	text-decoration: none;
 	padding: 10px 15px;
 	border-radius: 20px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
 }
 
 article a.more:hover {
@@ -140,6 +169,7 @@ article a.more:hover {
 	width: 100%;
 	padding: 18px;
 	border: 1px solid #e1e0e0;
+	border-right: none;
 	box-sizing: border-box;
 }
 
@@ -149,6 +179,7 @@ article a.more:hover {
 	width: 100%;
 	padding: 18px 55px 18px 18px;
 	border: 1px solid #e1e0e0;
+	border-right: none;
 	box-sizing: border-box;
 }
 
@@ -167,9 +198,17 @@ article a.more:hover {
 	color: #339933;
 }
 
+.widget .banner {
+	text-align: center;
+}
+
+.widget .banner img {
+	width: 100%;
+}
+
 .content .pager {
-	padding: 35px  30px 35px 30px;
-	border: 1px solid #e1e0e0;
+	padding: 30px  25px 50px 30px;
+	border-top: 1px solid #e1e0e0;
 	font-weight: bold;
 	font-size: 1.125em;
 	text-transform: uppercase;
@@ -180,10 +219,84 @@ article a.more:hover {
 	color: #818181;
 }
 
+.content .pager a:hover {
+	color: #339933;
+}
+
 .content .pager .previous-link {
 	float: left;
 }
 
 .content .pager .next-link {
 	float: right;
+}
+
+footer {
+	background: #f8f8f8;
+	border-top: 1px solid #e1e0e0;
+	padding-top: 70px;
+	padding-bottom: 90px;
+	text-align: center;
+}
+
+footer a img {
+	margin-bottom: 30px;
+}
+
+footer p {
+	font-size: 0.8125em;
+}
+
+/* адаптивная верстка */
+@media screen and (max-width:768px) {
+
+	header {
+		padding-top: 20px;
+	}
+
+	.header-menu li a {
+		padding-bottom: 20px;
+	}
+
+	.content {
+		padding-top: 20px;
+	}
+
+	main {
+		float: none; 
+		width: 100%;
+	}
+
+
+
+	aside {
+		float: none;
+		width: 100%;
+	}	
+
+	.widget .banner img{
+		width: auto;
+	}
+
+}
+
+@media screen and (max-width:376px) {
+
+	body header {
+		padding-top: 0px;
+	}
+
+	.logo {
+		float: none;
+		display: block;
+		margin: 20px auto 10px auto;
+
+	}
+
+	.header-menu {
+		float: none;
+		padding: 0px;
+		padding: 5px 20px 0px 20px;
+	}
+
 }
